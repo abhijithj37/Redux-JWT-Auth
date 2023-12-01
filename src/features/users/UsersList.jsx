@@ -9,7 +9,7 @@ const UsersList = () => {
         isError,
         error
     } = useGetUsersQuery()
-
+console.log('userdata',users);
     let content;
     if (isLoading) {
         content = <p>"Loading..."</p>;
@@ -18,7 +18,7 @@ const UsersList = () => {
             <section className="users">
                 <h1>Users List</h1>
                 <ul>
-                    {users.map((user, i) => {
+                    {users.data.map((user, i) => {
                         return <li key={i}>{user.username}</li>
                     })}
                 </ul>
